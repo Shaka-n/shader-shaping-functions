@@ -18,7 +18,10 @@ uniform float u_time;
 // Values of n less than 1.0 dramatically increase the convexity of the curve
 // resulting in a large white space then suddenly crashing to black. The same
 // is true of higher values of n, though you can get as high as 100.0 and still
-// see a usable effect.
+// see a usable effect. Notably, the slope at the start of the curve will
+// remain consistent: a gradual, decreasing curve. The shape afterwards is
+// still determined by n, but this initial consistency seems to be a defining
+// feature of this function.
 
 float powCosine(float x, float n){
     float y = 0.0;
