@@ -8,20 +8,12 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
-// This function returns a cosine curve translated above the x axis where the
-// concavity/convexity of the tails is determined by the given value n.
+// This function returns a cosine curve translated above the x axis where the concavity/convexity of the tails is determined by the given value n. 
 
-// In short, we take get a normal slice of a cosine wave raised to the power
-// of n. The n value determines how the shape of the curve as x approaches 1.0.
-// The term "x/2.0" just translates the plot up above the x axis.
+// In short, we take get a normal slice of a cosine wave raised to the power of n. The n value determines how the shape of the curve as x approaches 1.0. The term "x/2.0" just translates the plot up above the x axis.
 
-// Values of n less than 1.0 dramatically increase the convexity of the curve
-// resulting in a large white space then suddenly crashing to black. The same
-// is true of higher values of n, though you can get as high as 100.0 and still
-// see a usable effect. Notably, the slope at the start of the curve will
-// remain consistent: a gradual, decreasing curve. The shape afterwards is
-// still determined by n, but this initial consistency seems to be a defining
-// feature of this function.
+// Values of n less than 1.0 dramatically increase the convexity of the curve resulting in a large white space then suddenly crashing to black. 
+// The same is true of higher values of n, though you can get as high as 100.0 and still see a usable effect. Notably, the slope at the start of the curve will remain consistent: a gradual, decreasing curve. The shape afterwards is still determined by n, but this initial consistency seems to be a defining feature of this function.
 
 float powCosine(float x, float n){
     float y = 0.0;
